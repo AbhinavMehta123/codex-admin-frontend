@@ -160,12 +160,7 @@ const About = ({ id = "about" }) => {
           {moreInfo
             ? moreInfo
             : "Loading event moreinfo..."}
-          {/* Sample data */}
-            CODEX-BUILD isn’t just about solving problems — it’s about solving
-            them beautifully. With each challenge, participants explore the
-            intersection of creativity and computation. From algorithms to UI
-            design, it’s a playground for every tech enthusiast to push
-            boundaries and redefine what’s possible.
+          {/* Data display dynamically */}
           </p>
         </motion.div>
       </div>
