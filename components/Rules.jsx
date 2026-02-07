@@ -122,12 +122,7 @@ const Rules = ({ id = "rules" }) => {
         >
           To ensure a fair and enjoyable competition, all participants are
           required to follow these guidelines carefully throughout the event.
-          {/* sample rules */}
-          Devices: Teams must bring their own laptops; high-speed internet will be provided.
-          AI Tools: Use of AI APIs (OpenAI, Gemini, Anthropic) and coding assistants is required.
-          You have to use AI models also
-          individual participation is allowed
-          Plagiarism: Copying complete pre-existing projects is strictly prohibited.
+          {/* Rules display using api */}
         </motion.p>
       </div>
 
