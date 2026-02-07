@@ -154,7 +154,7 @@ const About = ({ id = "about" }) => {
           className="max-w-xl"
         >
           <h3 className="text-3xl md:text-4xl font-bold text-[#e99b63] mb-4">
-            Innovation Meets Passion
+            Event Description
           </h3>
           <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-6">
           {moreInfo
