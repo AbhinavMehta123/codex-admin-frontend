@@ -71,7 +71,7 @@ const Navbar = () => {
         className="flex items-center gap-4 z-50"
       >
         <img
-          src="/WebAssets/WhatsApp Image 2026-01-18 at 5.51.57 PM.jpeg"
+          src="/WebAssets/codex-logo.jpeg"
           alt="Logo"
           className="h-8 md:h-12 w-auto object-contain"
         />

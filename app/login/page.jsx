@@ -84,7 +84,7 @@ const LoginPage = () => {
             {/* Header */}
             <motion.h1
                 className={cn(
-                    "text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-10 bg-clip-text text-transparent bg-gradient-to-r from-[#e99b63] via-[#ffcc8f] to-[#e99b63]/80",
+                    "text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-10 bg-clip-text text-transparent bg-gradient-to-r from-[#e99b63] via-[#ffcc8f] to-[#e99b63]/80 relative z-60",
                     dancingScript.className
                 )}
             >

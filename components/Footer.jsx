@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Logo and text */}
         <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
           <motion.img
-            src="/WebAssets/WhatsApp Image 2025-12-28 at 9.03.33 PM.jpeg"
+            src="/WebAssets/alfa-logo.jpeg"
             alt="ALFA Coding Club Logo"
             className="w-14 h-14 md:w-16 md:h-16 object-contain rounded-full border border-[#e99b63]/50 shadow-[0_0_20px_#e99b63]/30"
             whileHover={{ scale: 1.05 }}
