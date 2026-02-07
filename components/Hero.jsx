@@ -145,10 +145,9 @@ export default function Hero({
             <p className="text-base sm:text-lg md:text-xl text-white/50 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
               Join{" "}
               <span className="text-[#e99b63] font-semibold">
-                Tech Samaroh 2026
+              CODEX Build
               </span>{" "}
-              — Trinity Dwarka’s annual tech fest celebrating creativity,
-              innovation, and the future of technology!
+              is a fast-paced development challenge where participants create innovative applications powered by Artificial Intelligence.
             </p>
             <Link href="/login">
             <button className="cursor-pointer w-full md:w-auto px-10 py-5 rounded-2xl bg-[#e99b63] text-black font-bold  text-[14px] md:text-[16px] tracking-[0.25em] hover:scale-105 hover:shadow-[0_0_20px_#e99b63]/60 transition-all duration-300">
