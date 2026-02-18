@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import ElegantShape from "@/components/elegantShape";
 import { Dancing_Script } from "next/font/google";
+import { socket } from "@/utils/socket";
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   weight: ["400"],
@@ -67,31 +68,48 @@ export default function DashboardPage() {
   }, [timer]);
 
   // ✅ Timer Controls
-  const startTimer = async () => {
-    try {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/timer/start`,  {
+ const startTimer = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/timer/start`,
+      {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await res.json();
-      if (res.ok) setTimer(data.timer);
-    } catch (err) {
-      console.error("Failed to start timer:", err);
-    }
-  };
+      }
+    );
+    const data = await res.json();
+    if (res.ok) {
+      setTimer(data.timer);
 
-  const stopTimer = async () => {
-    try {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/timer/stop`, {
+      // ✅ Emit real-time event to all participants
+      socket.emit("start_hackathon", data.timer.startTime);
+    }
+  } catch (err) {
+    console.error("Failed to start timer:", err);
+  }
+};
+
+const stopTimer = async () => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/timer/stop`,
+      {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await res.json();
-      if (res.ok) setTimer(data.timer);
-    } catch (err) {
-      console.error("Failed to stop timer:", err);
+      }
+    );
+    const data = await res.json();
+    if (res.ok) {
+      setTimer(data.timer);
+
+      // ✅ Emit real-time event to stop participant timers
+      socket.emit("stop_hackathon");
     }
-  };
+  } catch (err) {
+    console.error("Failed to stop timer:", err);
+  }
+};
+
 
   const logout = () => {
     localStorage.removeItem("adminToken");
